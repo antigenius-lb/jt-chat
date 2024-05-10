@@ -40,12 +40,11 @@ const Header = memo(() => {
       <Flexbox distribution={'space-between'} horizontal>
         <Flexbox align={'center'} gap={4} horizontal>
           {/*<Logo className={styles.logo} size={36} type={'text'} />*/}
-          <Image src="/images/logo.png"
-                 alt='logo'
-                 width={175}
-                 height={45}
+          <Image alt='logo'
                  blurDataURL="data:..."
-                 placeholder="blur"
+                 height={45} placeholder="blur"
+                 src="/images/logo.png"
+                 width={175}
           />
           {enableWebrtc && <SyncStatusTag/>}
 
