@@ -1,6 +1,6 @@
 import {
   LobeChatPluginManifest,
-  JtChatPluginsMarketIndex,
+  LobeChatPluginsMarketIndex,
   pluginManifestSchema,
 } from '@lobehub/chat-plugin-sdk';
 
@@ -44,7 +44,7 @@ class ToolService {
   /**
    * get plugin list from store
    */
-  getPluginList = async (): Promise<JtChatPluginsMarketIndex> => {
+  getPluginList = async (): Promise<LobeChatPluginsMarketIndex> => {
     const locale = globalHelpers.getCurrentLanguage();
 
     const res = await fetch(`${API_ENDPOINTS.pluginStore}?locale=${locale}`);
