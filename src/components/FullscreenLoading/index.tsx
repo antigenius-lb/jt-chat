@@ -1,15 +1,22 @@
-import { Icon, Logo } from '@lobehub/ui';
-import { Loader2 } from 'lucide-react';
-import { memo } from 'react';
-import { Center, Flexbox } from 'react-layout-kit';
+// import { Icon, Logo } from '@lobehub/ui';
+import {Icon} from '@lobehub/ui';
+import {Loader2} from 'lucide-react';
+import {memo} from 'react';
+import {Center, Flexbox} from 'react-layout-kit';
+import Image from "next/image";
 
-const FullscreenLoading = memo<{ title?: string }>(({ title }) => {
+const FullscreenLoading = memo<{ title?: string }>(({title}) => {
   return (
-    <Flexbox height={'100%'} style={{ userSelect: 'none' }} width={'100%'}>
+    <Flexbox height={'100%'} style={{userSelect: 'none'}} width={'100%'}>
       <Center flex={1} gap={12} width={'100%'}>
-        <Logo extra={'Chat'} size={48} type={'combine'} />
+        <Image alt='logo'
+               blurDataURL="data:..."
+               height={45} placeholder="blur"
+               src="/images/logo.png"
+               width={175}
+        />
         <Center gap={16} horizontal>
-          <Icon icon={Loader2} spin />
+          <Icon icon={Loader2} spin/>
           {title}
         </Center>
       </Center>
