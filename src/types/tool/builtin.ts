@@ -1,8 +1,8 @@
-import { JtChatPluginApi, Meta } from '@lobehub/chat-plugin-sdk';
+import { LobeChatPluginApi, Meta } from '@lobehub/chat-plugin-sdk';
 import { ReactNode } from 'react';
 
 export interface BuiltinToolManifest {
-  api: JtChatPluginApi[];
+  api: LobeChatPluginApi[];
 
   /**
    * Plugin name
