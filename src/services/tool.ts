@@ -1,5 +1,5 @@
 import {
-  JtChatPluginManifest,
+  LobeChatPluginManifest,
   JtChatPluginsMarketIndex,
   pluginManifestSchema,
 } from '@lobehub/chat-plugin-sdk';
@@ -55,7 +55,7 @@ class ToolService {
   getPluginManifest = async (
     url?: string,
     useProxy: boolean = false,
-  ): Promise<JtChatPluginManifest> => {
+  ): Promise<LobeChatPluginManifest> => {
     // 1. valid plugin
     if (!url) {
       throw new TypeError('noManifest');
@@ -63,7 +63,7 @@ class ToolService {
 
     // 2. 发送请求
 
-    let data = await this._fetchJSON<JtChatPluginManifest>(url, useProxy);
+    let data = await this._fetchJSON<LobeChatPluginManifest>(url, useProxy);
 
     // @ts-ignore
     // if there is a description_for_model, it is an OpenAI plugin
@@ -101,8 +101,8 @@ class ToolService {
 
   private convertOpenAIManifestToLobeManifest = (
     data: OpenAIPluginManifest,
-  ): JtChatPluginManifest => {
-    const manifest: JtChatPluginManifest = {
+  ): LobeChatPluginManifest => {
+    const manifest: LobeChatPluginManifest = {
       api: [],
       homepage: data.legal_info_url,
       identifier: data.name_for_model,
