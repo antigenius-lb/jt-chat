@@ -21,20 +21,17 @@ config.rules['unicorn/prefer-number-properties'] = 0;
 config.overrides = [
   {
     extends: ['plugin:mdx/recommended'],
-    // files: ['*.mdx'],
-    files: ["vitest.config.ts"],
+    files: ['*.mdx'],
     rules: {
-      "no-unused-vars": "off",
-      // '@typescript-eslint/no-unused-vars': 1,
-      // 'no-undef': 0,
-      // 'react/jsx-no-undef': 0,
-      // 'react/no-unescaped-entities': 0,
+      '@typescript-eslint/no-unused-vars': 1,
+      'no-undef': 0,
+      'react/jsx-no-undef': 0,
+      'react/no-unescaped-entities': 0,
     },
     settings: {
       'mdx/code-blocks': false,
     },
   },
-]
-;
+];
 
 module.exports = config;
